@@ -1,0 +1,148 @@
+﻿@model IEnumerable<BlogListItemVm>
+<!-- Start Latest News Area -->
+<div id="blog" class="latest-news-area section">
+    @foreach(var item in Model)
+    {
+        <!--======  Start Section Title Five ======-->
+        <div class="section-title-five">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content">
+                            <h6>latest news</h6>
+                            <h2 class="fw-bold">Latest News & Blog</h2>
+                            <p>
+                                There are many variations of passages of Lorem Ipsum available,
+                                but the majority have suffered alteration in some form.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!--======  End Section Title Five ======-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <!-- Single News -->
+                    <div class="single-news">
+                        <div class="image">
+                            <a href="javascript:void(0)">
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img  class="thumb" src="~/assets/image/stories/@item.ImageUrl" alt="Blog" />
+                                }
+                                else
+                                {
+                                    <img class="thumb" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" alt="Blog" />
+                                }
+                            </a>
+                        <div class="meta-details">
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img class="thumb" src="~/assets/image/stories/@item.ImageUrl" alt="Blog" />
+                                }
+                                else
+                                {
+                                    <img class="thumb" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" alt="Blog" />
+                                }
+                            <span>BY @item.Author</span>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <h4 class="title">
+                            <a href="javascript:void(0)"> @item.Title </a>
+                        </h4>
+                        <p>
+                           @item.Description
+                        </p>
+                    </div>
+                </div>
+                <!-- End Single News -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single News -->
+                <div class="single-news">
+                    <div class="image">
+                        <a href="javascript:void(0)">
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img class="thumb" src="~/assets/image/stories/@item.ImageUrl" alt="Blog" />
+                                }
+                                else
+                                {
+                                    <img class="thumb" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" alt="Blog" />
+                                }
+                            </a>
+                        <div class="meta-details">
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img class="thumb" src="~/assets/image/stories/@item.ImageUrl" alt="Blog" />
+                                }
+                                else
+                                {
+                                    <img class="thumb" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" alt="Blog" />
+                                }
+                                <span>BY @item.Author</span>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <h4 class="title">
+                            <a href="javascript:void(0)">
+                                @item.Title
+                            </a>
+                        </h4>
+                        <p>
+                             @item.Description
+                        </p>
+                    </div>
+                </div>
+                <!-- End Single News -->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single News -->
+                <div class="single-news">
+                    <div class="image">
+                            <a href="javascript:void(0)">
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img class="thumb" src="~/assets/image/stories/@item.ImageUrl" alt="Blog" />
+                                }
+                                else
+                                {
+                                    <img class="thumb" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" alt="Blog" />
+                                }
+                            </a>
+                        <div class="meta-details">
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img class="thumb" src="~/assets/image/stories/@item.ImageUrl" alt="Blog" />
+                                }
+                                else
+                                {
+                                    <img class="thumb" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg" alt="Blog" />
+                                }
+                            <span>BY TIM NORTON</span>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <h4 class="title">
+                            <a href="javascript:void(0)">
+                                    @item.Title
+                            </a>
+                        </h4>
+                        <p>
+                                @item.Description
+                        </p>
+                    </div>
+                </div>
+                <!-- End Single News -->
+            </div>
+        </div>
+    </div>
+    }
+    
+</div>
+<!-- End Latest News Area -->

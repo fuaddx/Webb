@@ -1,0 +1,76 @@
+﻿@model IEnumerable<BlogListItemVm> 
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Blog</h1>
+    <p class="mb-4">
+        <a  asp-action="Create" class="btn btn-success">Create</a>
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                 <table class="table table-bordered"  width="100%">
+                    
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>ImageUrl</th>
+                                    <th>CreatedTime</th>
+                                    <th>UpdatedTime</th>
+                                    <th>Author</th>
+                                    <th class="text-center" colspan="2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                    <td>@item.Title</td>
+                                    @if (!string.IsNullOrEmpty(item.Description))
+                                    {
+                                        <td>@item.Description</td>
+                                    }
+                                    else
+                                    {
+                                        <td>No Description </td>
+                                    }
+                                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                    {
+                                        <td><img src="~/assets/image/stories/@item.ImageUrl"></td>
+                                    }
+                                    else
+                                    {
+
+                                        <td width="20%"><img style="width:95%" src="https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg"></td>
+                                    }
+                                    <td>@item.CreatedTime</td>
+                                    <td>@(item.UpdatedTime != null ? item.UpdatedTime.ToString() : "No Update")</td>
+                                    <td>@item.Author</td>
+                                    <td><a asp-action="Update" class="btn btn-outline-info" asp-route-id="@item.Id">Update</a></td>
+                                    <td><a asp-action="Delete" class="btn btn-outline-danger" asp-route-id="@item.Id">Delete</a></td>
+                                    </tr>
+                                        }
+                                    }else{
+                                        <td>No data</td>
+                                    }
+                                 
+                            </tbody>
+                        
+                    
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

@@ -1,0 +1,42 @@
+﻿@model BlogUpdatedVm
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+    <p class="mb-4">
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+        </div>
+        <div class="card-body">
+            <form asp-action="Update" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <input asp-for="Title" class="form-control">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <input asp-for="Description" class="form-control">
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Author"></label>
+                    <input asp-for="Author" class="form-control">
+                </div>
+                <img src="~/assets/image/stories/@Model.ImageUrl">
+                <div class="form-group">
+                    <label asp-for="MainImage"></label>
+                    <input asp-for="MainImage" class="form-control">
+                    <span asp-validation-for="MainImage "></span>
+                </div>
+                <button class="btn btn-success">Update</button>
+                <a asp-action="Cancel" class="btn btn-danger">Cancel</a>
+            </form>
+        </div>
+    </div>
+
+</div>
